@@ -19,10 +19,7 @@ jobs:
           node-version: "14"
 
       - name: Install dependencies
-        run: |
-          npm ci
-          npm install -g typescript
-          npm install --save-dev @testing-library/react @testing-library/jest-dom @types/jest
+        run: npm install
 
       - name: Run tests
         run: npm test
