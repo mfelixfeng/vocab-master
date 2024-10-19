@@ -94,7 +94,7 @@ const HomePage = () => {
           spacing={10}
           align="center"
         >
-          <VStack spacing={5} align="flex-start" flex={1}>
+          <VStack spacing={5} align="center" flex={1}>
             <Heading as="h2" size="2xl">
               轻松掌握英语词汇，提升语言能力
             </Heading>
