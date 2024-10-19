@@ -31,7 +31,5 @@ jobs:
 
     steps:
       - name: Deploy to Cloudflare Pages
-        env:
-          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
         run: |
-          curl -X POST "$CLOUDFLARE_DEPLOY_HOOK"
+          curl -X POST "${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}"
