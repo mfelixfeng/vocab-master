@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests and Deploy
 
 on:
   push:
@@ -23,3 +23,15 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
+        run: |
+          curl -X POST "$CLOUDFLARE_DEPLOY_HOOK"
