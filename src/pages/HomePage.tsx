@@ -56,7 +56,7 @@ const HomePage = () => {
                 登录
               </Button>
               <Button colorScheme="green" rounded="full">
-                免费试用
+                注册
               </Button>
             </Flex>
           </Flex>
@@ -253,7 +253,7 @@ const HomePage = () => {
             </Heading>
             <Text fontSize="xl">现在注册，即可获得7天免费高级会员体验</Text>
             <Button size="lg" colorScheme="blue" rounded="full" px={8}>
-              立即开始免费试用
+              立即开始
             </Button>
           </VStack>
         </Container>
