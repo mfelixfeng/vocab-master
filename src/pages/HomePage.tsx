@@ -17,6 +17,7 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import { IconType } from "react-icons";
 import {
   FaBook,
   FaBrain,
@@ -28,9 +29,8 @@ import {
   FaRocket,
   FaUser,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import { IconType } from "react-icons";
-import { Link, useNavigate } from "react-router-dom";
 
 const Feature = ({
   title,
@@ -57,7 +57,6 @@ const Feature = ({
 const HomePage = () => {
   const bgColor = useColorModeValue("gray.50", "gray.800");
   const cardBg = useColorModeValue("white", "gray.700");
-  const navigate = useNavigate();
   return (
     <Box bg={bgColor} minH="100vh">
       {/* Header */}
