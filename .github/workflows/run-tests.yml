@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test
+        run: npm test && npm run build
 
   deploy:
     needs: test
@@ -32,4 +32,4 @@ jobs:
     steps:
       - name: Deploy to Cloudflare Pages
         run: |
-          curl -X POST "${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}"
+          curl -X POST "${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK_URL }}"
