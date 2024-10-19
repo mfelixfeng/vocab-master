@@ -28,8 +28,30 @@ import {
   FaRocket,
   FaUser,
 } from "react-icons/fa";
-import Feature from "../components/Feature";
 import Footer from "../components/Footer";
+import { IconType } from "react-icons";
+
+const Feature = ({
+  title,
+  text,
+  icon,
+}: {
+  title: string;
+  text: string;
+  icon: IconType;
+}) => {
+  return (
+    <VStack>
+      <Icon as={icon} w={10} h={10} color="blue.500" />
+      <Text fontWeight="bold" fontSize="xl">
+        {title}
+      </Text>
+      <Text color="gray.600" textAlign="center">
+        {text}
+      </Text>
+    </VStack>
+  );
+};
 
 const HomePage = () => {
   const bgColor = useColorModeValue("gray.50", "gray.800");
