@@ -60,31 +60,6 @@ const SignInPage = () => {
               <Text fontSize={{ base: "md", md: "xl" }} color="gray.600">
                 登录您的账户，继续您的英语词汇学习之旅！
               </Text>
-              <SimpleGrid
-                columns={{ base: 2, sm: 2 }}
-                spacing={{ base: 4, md: 6 }}
-              >
-                <Feature
-                  icon={FaSignInAlt}
-                  title="快速登录"
-                  description="安全便捷的登录体验"
-                />
-                <Feature
-                  icon={FaUserPlus}
-                  title="个性化学习"
-                  description="根据您的进度定制内容"
-                />
-                <Feature
-                  icon={FaLock}
-                  title="安全保障"
-                  description="保护您的账户和学习数据"
-                />
-                <Feature
-                  icon={FaEnvelope}
-                  title="学习提醒"
-                  description="定期接收学习建议和提醒"
-                />
-              </SimpleGrid>
             </VStack>
           </Box>
           <Box bg={cardBg} p={{ base: 6, md: 8 }} rounded="lg" shadow="lg">
