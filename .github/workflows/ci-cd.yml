@@ -13,23 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set npm registry
-        run: npm config set registry https://registry.npmmirror.com
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "23"
           cache: "npm"
 
-      - name: Setup pnpm
-        run: corepack enable
-
       - name: Install dependencies
-        run: pnpm ci
+        run: npm install
 
       - name: Build
-        run: pnpm run build
+        run: npm run build
 
   test:
     needs: build
@@ -44,14 +38,11 @@ jobs:
           node-version: "23"
           cache: "npm"
 
-      - name: Setup pnpm
-        run: corepack enable
-
       - name: Install dependencies
-        run: pnpm ci
+        run: npm install
 
       - name: Run tests
-        run: pnpm test
+        run: npm test
 
   deploy:
     needs: test
