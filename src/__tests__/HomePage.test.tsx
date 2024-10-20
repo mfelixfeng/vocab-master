@@ -4,16 +4,16 @@ import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import "@testing-library/jest-dom";
-import RegisterPage from "../pages/RegisterPage";
+import SignUpPage from "../pages/SignUpPage";
 
 describe("HomePage", () => {
-  it("navigates to register page when register button is clicked", async () => {
+  it("navigates to sign up page when register button is clicked", async () => {
     render(
       <ChakraProvider>
         <MemoryRouter initialEntries={["/"]}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/register" element={<SignUpPage />} />
           </Routes>
         </MemoryRouter>
       </ChakraProvider>

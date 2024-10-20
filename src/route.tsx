@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Layout from "./pages/Layout";
-import RegisterPage from "./pages/RegisterPage";
+import SignUpPage from "./pages/SignUpPage";
 
 export default createBrowserRouter([
   {
@@ -9,7 +9,7 @@ export default createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "/register", element: <RegisterPage /> },
+      { path: "/register", element: <SignUpPage /> },
     ],
   },
 ]);
