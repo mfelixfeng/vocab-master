@@ -14,11 +14,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set npm registry
-        run: npm config set registry https://registry.npmjs.org/
+        run: npm config set registry http://mirrors.cloud.tencent.com/npm/
 
       - name: Network diagnostics
         run: |
-          curl -I https://registry.npmjs.org/
+          curl -I http://mirrors.cloud.tencent.com/npm/
           ping -c 4 registry.npmjs.org
 
       - name: Set up Node.js
@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: "18"
       - name: Set npm registry
-        run: npm config set registry https://registry.npmjs.org/
+        run: npm config set registry http://mirrors.cloud.tencent.com/npm/
 
       - name: Install dependencies
         run: npm install
