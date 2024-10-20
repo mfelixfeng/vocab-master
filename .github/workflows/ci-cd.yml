@@ -19,6 +19,11 @@ jobs:
           node-version: "23"
           cache: "npm"
 
+      - name: Set npm registry and increase network timeout
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config set fetch-retry-maxtimeout 120000
+
       - name: Install dependencies
         run: |
           npm install -g npm@latest
@@ -39,6 +44,11 @@ jobs:
         with:
           node-version: "23"
           cache: "npm"
+
+      - name: Set npm registry and increase network timeout
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config set fetch-retry-maxtimeout 120000
 
       - name: Install dependencies
         run: |
