@@ -19,7 +19,7 @@ jobs:
       - name: Network diagnostics
         run: |
           curl -I https://registry.npmmirror.com/
-          ping -c 4 https://registry.npmmirror.com/
+          ping -c 4 registry.npmmirror.com
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
