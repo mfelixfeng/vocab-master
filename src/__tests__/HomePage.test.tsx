@@ -30,6 +30,6 @@ describe("HomePage", () => {
       await userEvent.click(signUpLink);
     }
 
-    expect(screen.getByText(/User Sign Up/i)).toBeInTheDocument();
+    expect(screen.getByText(/今天就加入词达人/i)).toBeInTheDocument();
   });
 });
