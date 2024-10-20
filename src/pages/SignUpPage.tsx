@@ -12,32 +12,11 @@ import {
   useToast,
   Flex,
   SimpleGrid,
-  Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaEnvelope, FaRocket, FaLightbulb, FaChartLine } from "react-icons/fa";
 import Footer from "../components/Footer";
-import { IconType } from "react-icons";
-
-const Feature = ({
-  icon,
-  title,
-  description,
-}: {
-  icon: IconType;
-  title: string;
-  description: string;
-}) => {
-  return (
-    <VStack>
-      <Icon as={icon} w={10} h={10} color="blue.500" />
-      <Text fontWeight="bold">{title}</Text>
-      <Text textAlign="center" color="gray.600">
-        {description}
-      </Text>
-    </VStack>
-  );
-};
+import Feature from "../components/Feature";
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");

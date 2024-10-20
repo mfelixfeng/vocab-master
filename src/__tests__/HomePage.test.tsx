@@ -13,7 +13,7 @@ describe("HomePage", () => {
         <MemoryRouter initialEntries={["/"]}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/register" element={<SignUpPage />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
           </Routes>
         </MemoryRouter>
       </ChakraProvider>

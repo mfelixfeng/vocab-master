@@ -9,7 +9,7 @@ export default createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "/register", element: <SignUpPage /> },
+      { path: "/sign-up", element: <SignUpPage /> },
     ],
   },
 ]);

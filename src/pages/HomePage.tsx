@@ -17,7 +17,6 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { IconType } from "react-icons";
 import {
   FaBook,
   FaBrain,
@@ -30,29 +29,8 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Feature from "../components/Feature";
 import Footer from "../components/Footer";
-
-const Feature = ({
-  title,
-  text,
-  icon,
-}: {
-  title: string;
-  text: string;
-  icon: IconType;
-}) => {
-  return (
-    <VStack>
-      <Icon as={icon} w={10} h={10} color="blue.500" />
-      <Text fontWeight="bold" fontSize="xl">
-        {title}
-      </Text>
-      <Text color="gray.600" textAlign="center">
-        {text}
-      </Text>
-    </VStack>
-  );
-};
 
 const HomePage = () => {
   const bgColor = useColorModeValue("gray.50", "gray.800");
@@ -77,7 +55,7 @@ const HomePage = () => {
               <Button colorScheme="blue" rounded="full" mr={4}>
                 登录
               </Button>
-              <Link to="/register">
+              <Link to="/sign-up">
                 <Button colorScheme="green" rounded="full">
                   注册
                 </Button>
@@ -119,22 +97,22 @@ const HomePage = () => {
               <Feature
                 icon={FaUser}
                 title="智能词汇学习"
-                text="AI生成的情境故事，让记忆更加深刻"
+                description="AI生成的情境故事，让记忆更加深刻"
               />
               <Feature
                 icon={FaBook}
                 title="个性化学习路径"
-                text="根据你的水平和目标，定制专属计划"
+                description="根据你的水平和目标，定制专属计划"
               />
               <Feature
                 icon={FaChartLine}
                 title="进度追踪"
-                text="可视化你的学习历程，激励持续进步"
+                description="可视化你的学习历程，激励持续进步"
               />
               <Feature
                 icon={FaCheckCircle}
                 title="趣味挑战"
-                text="通过游戏和竞赛，让学习变得有趣"
+                description="通过游戏和竞赛，让学习变得有趣"
               />
             </SimpleGrid>
           </VStack>
