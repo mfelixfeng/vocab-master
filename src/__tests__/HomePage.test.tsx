@@ -20,16 +20,16 @@ describe("HomePage", () => {
     );
 
     // 查找按钮元素
-    const registerButton = screen.getByRole("button", { name: /注册/i });
-    expect(registerButton).toBeTruthy();
+    const signUpButton = screen.getByRole("button", { name: /注册/i });
+    expect(signUpButton).toBeTruthy();
 
-    const registerLink = registerButton.closest("a");
-    expect(registerLink).toBeTruthy();
+    const signUpLink = signUpButton.closest("a");
+    expect(signUpLink).toBeTruthy();
 
-    if (registerLink) {
-      await userEvent.click(registerLink);
+    if (signUpLink) {
+      await userEvent.click(signUpLink);
     }
 
-    expect(screen.getByText(/User Register/i)).toBeInTheDocument();
+    expect(screen.getByText(/User Sign Up/i)).toBeInTheDocument();
   });
 });

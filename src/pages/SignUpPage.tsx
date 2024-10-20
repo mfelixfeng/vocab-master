@@ -10,9 +10,10 @@ import {
   Text,
   Link,
   useToast,
+  Flex,
 } from "@chakra-ui/react";
 
-const RegisterPage = () => {
+const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const toast = useToast();
 
@@ -28,29 +29,36 @@ const RegisterPage = () => {
   };
 
   return (
-    <Box maxWidth="400px" padding={3} mt={8}>
-      <VStack spacing={4} as="form" onSubmit={handleSubmit}>
-        <Heading>User Register</Heading>
-        <FormControl isRequired>
-          <FormLabel>Email</FormLabel>
-          <Input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </FormControl>
-        <Button type="submit" colorScheme="blue" width="full">
-          Register
-        </Button>
-        <Text>
-          Already have an account?{" "}
-          <Link color="blue.500" href="/login">
-            Login
-          </Link>
-        </Text>
-      </VStack>
-    </Box>
+    <Flex
+      minHeight="100vh"
+      width="100%"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Box maxWidth="400px" width="100%" padding={3}>
+        <VStack spacing={4} as="form" onSubmit={handleSubmit}>
+          <Heading>User Sign Up</Heading>
+          <FormControl isRequired>
+            <FormLabel>Email</FormLabel>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </FormControl>
+          <Button type="submit" colorScheme="blue" width="full">
+            Sign Up
+          </Button>
+          <Text>
+            Already have an account?{" "}
+            <Link color="blue.500" href="/login">
+              Login
+            </Link>
+          </Text>
+        </VStack>
+      </Box>
+    </Flex>
   );
 };
 
-export default RegisterPage;
+export default SignUpPage;
