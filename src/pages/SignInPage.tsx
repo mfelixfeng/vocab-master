@@ -1,22 +1,21 @@
-import React, { useState } from "react";
 import {
   Box,
   Button,
+  Flex,
   FormControl,
   FormLabel,
-  Input,
-  VStack,
   Heading,
-  Text,
-  Link,
-  useToast,
-  Flex,
+  Input,
   SimpleGrid,
+  Text,
   useColorModeValue,
+  useToast,
+  Link,
+  VStack,
 } from "@chakra-ui/react";
-import { FaSignInAlt, FaUserPlus, FaLock, FaEnvelope } from "react-icons/fa";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
-import Feature from "../components/Feature";
+import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
@@ -24,6 +23,7 @@ const SignInPage = () => {
   const toast = useToast();
   const bgColor = useColorModeValue("gray.50", "gray.800");
   const cardBg = useColorModeValue("white", "gray.700");
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,7 +102,7 @@ const SignInPage = () => {
               </Text>
               <Text fontSize={{ base: "sm", md: "md" }}>
                 还没有账号？{" "}
-                <Link color="blue.500" href="/signup">
+                <Link color="blue.500" onClick={() => navigate("/sign-up")}>
                   注册
                 </Link>
               </Text>
