@@ -79,9 +79,11 @@ const HomePage = () => {
             <Text fontSize="xl" color="gray.600">
               通过AI智能学习系统，让词汇学习更高效、更有趣
             </Text>
-            <Button size="lg" colorScheme="blue" rounded="full" px={8}>
-              立即开始学习之旅
-            </Button>
+            <Link to="/sign-up">
+              <Button size="lg" colorScheme="blue" rounded="full" px={8}>
+                立即开始学习之旅
+              </Button>
+            </Link>
           </VStack>
         </Stack>
       </Container>

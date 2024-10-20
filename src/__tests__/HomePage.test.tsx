@@ -19,7 +19,6 @@ describe("HomePage", () => {
       </ChakraProvider>
     );
 
-    // 查找按钮元素
     const signUpButton = screen.getByRole("button", { name: /注册/i });
     expect(signUpButton).toBeTruthy();
 
@@ -28,6 +27,33 @@ describe("HomePage", () => {
 
     if (signUpLink) {
       await userEvent.click(signUpLink);
+    }
+
+    expect(screen.getByText(/今天就加入词达人/i)).toBeInTheDocument();
+  });
+
+  it("navigates to sign up page when get started button is clicked", async () => {
+    render(
+      <ChakraProvider>
+        <MemoryRouter initialEntries={["/"]}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
+          </Routes>
+        </MemoryRouter>
+      </ChakraProvider>
+    );
+
+    const getStartedButton = screen.getByRole("button", {
+      name: /立即开始学习之旅/i,
+    });
+    expect(getStartedButton).toBeTruthy();
+
+    const getStartedLink = getStartedButton.closest("a");
+    expect(getStartedLink).toBeTruthy();
+
+    if (getStartedLink) {
+      await userEvent.click(getStartedLink);
     }
 
     expect(screen.getByText(/今天就加入词达人/i)).toBeInTheDocument();
