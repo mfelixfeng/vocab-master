@@ -14,7 +14,12 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set npm registry
-        run: npm config set registry https://registry.npmmirror.com/
+        run: npm config set registry https://registry.npmjs.org/
+
+      - name: Network diagnostics
+        run: |
+          curl -I https://registry.npmjs.org/
+          ping -c 4 registry.npmjs.org
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -39,7 +44,7 @@ jobs:
         with:
           node-version: "18"
       - name: Set npm registry
-        run: npm config set registry https://registry.npmmirror.com/
+        run: npm config set registry https://registry.npmjs.org/
 
       - name: Install dependencies
         run: npm install
