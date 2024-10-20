@@ -4,6 +4,7 @@ import Layout from "./pages/Layout";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 
 export default createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export default createBrowserRouter([
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/terms-of-service", element: <TermsOfServicePage /> },
+      { path: "/privacy-policy", element: <PrivacyPolicyPage /> },
     ],
   },
 ]);
