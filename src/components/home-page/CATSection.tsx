@@ -7,7 +7,7 @@ import {
   Button,
   Container,
 } from "@chakra-ui/react";
-
+import { Link } from "react-router-dom";
 const CATSection = () => {
   return (
     <Box bg={useColorModeValue("blue.50", "blue.900")} py={20}>
@@ -17,9 +17,11 @@ const CATSection = () => {
             准备好提升你的词汇量了吗？
           </Heading>
           <Text fontSize="xl">现在注册，即可获得7天免费高级会员体验</Text>
-          <Button size="lg" colorScheme="blue" rounded="full" px={8}>
-            立即开始
-          </Button>
+          <Link to="/sign-up">
+            <Button size="lg" colorScheme="blue" rounded="full" px={8}>
+              立即开始
+            </Button>
+          </Link>
         </VStack>
       </Container>
     </Box>
