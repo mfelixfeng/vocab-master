@@ -11,23 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set npm registry
         run: npm config set registry https://registry.npmmirror.com
 
-      #   - name: Network diagnostics
-      #     run: |
-      #       curl -I https://registry.npmmirror.com/
-      #       ping -c 4 registry.npmmirror.com
-
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "23"
+          node-version: "18"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
@@ -37,12 +32,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "23"
+          node-version: "18"
+
       - name: Set npm registry
         run: npm config set registry https://registry.npmmirror.com
 
