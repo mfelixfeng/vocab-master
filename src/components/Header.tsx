@@ -19,9 +19,11 @@ const Header = ({ bg }: Props) => {
             词达人
           </Heading>
           <Flex>
-            <Button colorScheme="blue" rounded="full" mr={4}>
-              登录
-            </Button>
+            <Link to="/sign-in">
+              <Button colorScheme="blue" rounded="full" mr={4}>
+                登录
+              </Button>
+            </Link>
             <Link to="/sign-up">
               <Button colorScheme="green" rounded="full">
                 注册
