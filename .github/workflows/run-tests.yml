@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: "18"
       - name: Set npm registry
-        run: npm config set registry http://mirrors.cloud.tencent.com/npm/
+        run: npm config set registry https://registry.npmmirror.com/
 
       - name: Install dependencies
         run: npm install
