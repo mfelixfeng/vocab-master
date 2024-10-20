@@ -10,7 +10,7 @@ describe("HomePage", () => {
   it("navigates to sign up page when register button is clicked", async () => {
     renderHomePage();
 
-    await clickButton(/注册/i);
+    await clickLinkButton(/注册/i);
 
     expect(screen.getByText(/今天就加入词达人/i)).toBeInTheDocument();
   });
@@ -18,7 +18,7 @@ describe("HomePage", () => {
   it("navigates to sign up page when get started button is clicked", async () => {
     renderHomePage();
 
-    await clickButton(/立即开始学习之旅/i);
+    await clickLinkButton(/立即开始学习之旅/i);
 
     expect(screen.getByText(/今天就加入词达人/i)).toBeInTheDocument();
   });
@@ -26,13 +26,13 @@ describe("HomePage", () => {
   it("navigates to sign up page when get started immediately button is clicked", async () => {
     renderHomePage();
 
-    clickButton(/立即开始/);
+    await clickLinkButton("立即开始");
 
     expect(screen.getByText(/今天就加入词达人/i)).toBeInTheDocument();
   });
 });
 
-async function clickButton(buttonName: RegExp) {
+async function clickLinkButton(buttonName: RegExp | string) {
   const signUpButton = screen.getByRole("button", { name: buttonName });
   expect(signUpButton).toBeTruthy();
 
