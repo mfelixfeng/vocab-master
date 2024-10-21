@@ -76,38 +76,6 @@ npm test
 - `npm run preview`: 预览生产环境构建
 - `npm test`: 运行 Jest 测试
 
-## 项目结构
-
-```
-vocab-master/
-│
-├── src/
-│   ├── components/
-│   │   ├── Footer.tsx
-│   │   ├── Header.tsx
-│   │   └── ...
-│   │
-│   ├── pages/
-│   │   ├── HomePage.tsx
-│   │   ├── SignInPage.tsx
-│   │   ├── SignUpPage.tsx
-│   │   ├── SignupConfirmPage.tsx
-│   │   └── ...
-│   │
-│   ├── route.tsx
-│   ├── main.tsx
-│   └── ...
-│
-├── public/
-│
-├── tests/
-│
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
-
 ## 贡献
 
 我们欢迎贡献！如果您想为词达人做出贡献，请遵循以下步骤：
@@ -120,7 +88,7 @@ vocab-master/
 
 ## 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+本项目采用 AGPLV3 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
 ## 联系我们
 
