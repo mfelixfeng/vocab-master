@@ -17,12 +17,14 @@ import {
 import { FaEnvelope, FaRocket, FaLightbulb, FaChartLine } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Feature from "../components/Feature";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const toast = useToast();
   const bgColor = useColorModeValue("gray.50", "gray.800");
   const cardBg = useColorModeValue("white", "gray.700");
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -109,17 +111,23 @@ const SignUpPage = () => {
               </Button>
               <Text fontSize={{ base: "sm", md: "md" }}>
                 注册即表示您同意我们的{" "}
-                <Link color="blue.500" href="/terms">
+                <Link
+                  color="blue.500"
+                  onClick={() => navigate("/terms-of-service")}
+                >
                   服务条款
                 </Link>{" "}
                 和{" "}
-                <Link color="blue.500" href="/privacy">
+                <Link
+                  color="blue.500"
+                  onClick={() => navigate("/privacy-policy")}
+                >
                   隐私政策
                 </Link>
               </Text>
               <Text fontSize={{ base: "sm", md: "md" }}>
                 已有账号？{" "}
-                <Link color="blue.500" href="/login">
+                <Link color="blue.500" onClick={() => navigate("/sign-in")}>
                   登录
                 </Link>
               </Text>
