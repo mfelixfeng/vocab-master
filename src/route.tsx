@@ -6,6 +6,7 @@ import SignInPage from "./pages/SignInPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
+import SignUpConfirmPage from "./pages/SignupConfirmPage";
 
 export default createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export default createBrowserRouter([
       { path: "/terms-of-service", element: <TermsOfServicePage /> },
       { path: "/privacy-policy", element: <PrivacyPolicyPage /> },
       { path: "/reset-password", element: <ResetPasswordPage /> },
+      { path: "/sign-up-confirm", element: <SignUpConfirmPage /> },
     ],
   },
 ]);
