@@ -1,23 +1,21 @@
-import React, { useState } from "react";
 import {
   Box,
   Button,
+  Flex,
   FormControl,
   FormLabel,
-  Input,
-  VStack,
   Heading,
-  Text,
-  useToast,
-  Flex,
-  SimpleGrid,
-  useColorModeValue,
+  HStack,
+  Input,
   PinInput,
   PinInputField,
-  HStack,
+  useColorModeValue,
+  useToast,
+  VStack,
 } from "@chakra-ui/react";
-import Footer from "../components/Footer";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const SignUpConfirmPage = () => {
   const [verificationCode, setVerificationCode] = useState("");
