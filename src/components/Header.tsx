@@ -15,9 +15,11 @@ const Header = ({ bg }: Props) => {
     >
       <Container maxW="container.xl" py={4}>
         <Flex justify="space-between" align="center">
-          <Heading as="h1" fontSize="2xl" color="blue.500">
-            词达人
-          </Heading>
+          <Link to="/">
+            <Heading as="h1" fontSize="2xl" color="blue.500">
+              词达人
+            </Heading>
+          </Link>
           <Flex>
             <Link to="/sign-in">
               <Button colorScheme="blue" rounded="full" mr={4}>

@@ -6,6 +6,7 @@ import SignUpPage from "../../pages/SignUpPage";
 import { render } from "@testing-library/react";
 import TermsOfServicePage from "../../pages/TermsOfServicePage";
 import PrivacyPolicyPage from "../../pages/PrivacyPolicyPage";
+import ResetPasswordPage from "../../pages/ResetPasswordPage";
 
 export const renderPage = (path: string = "/") => {
   render(
@@ -17,6 +18,7 @@ export const renderPage = (path: string = "/") => {
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
         </Routes>
       </MemoryRouter>
     </ChakraProvider>

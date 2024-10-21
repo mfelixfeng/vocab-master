@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -10,16 +11,13 @@ import {
   Text,
   useColorModeValue,
   useToast,
-  Link,
   VStack,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 
-const SignInPage = () => {
+const ResetPasswordPage = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const toast = useToast();
   const bgColor = useColorModeValue("gray.50", "gray.800");
   const cardBg = useColorModeValue("white", "gray.700");
@@ -27,12 +25,12 @@ const SignInPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the sign-in logic
+    // Here you would typically handle the password reset logic
     toast({
-      title: "登录尝试",
-      description: "我们正在处理您的登录请求。",
-      status: "info",
-      duration: 3000,
+      title: "重置密码请求已发送",
+      description: "请查看您的邮箱以获取重置密码的说明。",
+      status: "success",
+      duration: 5000,
       isClosable: true,
     });
   };
@@ -55,10 +53,10 @@ const SignInPage = () => {
           <Box>
             <VStack spacing={{ base: 5, md: 8 }} align="flex-start">
               <Heading as="h1" size={{ base: "xl", md: "2xl" }}>
-                欢迎回到词达人
+                重置您的密码
               </Heading>
               <Text fontSize={{ base: "md", md: "xl" }} color="gray.600">
-                登录您的账户，继续您的英语词汇学习之旅！
+                请输入您的电子邮箱地址，我们将向您发送重置密码的说明。
               </Text>
             </VStack>
           </Box>
@@ -69,7 +67,7 @@ const SignInPage = () => {
               onSubmit={handleSubmit}
             >
               <Heading as="h2" size={{ base: "lg", md: "xl" }}>
-                登录
+                重置密码
               </Heading>
               <FormControl isRequired>
                 <FormLabel>电子邮箱</FormLabel>
@@ -81,33 +79,19 @@ const SignInPage = () => {
                   size="lg"
                 />
               </FormControl>
-              <FormControl isRequired>
-                <FormLabel>密码</FormLabel>
-                <Input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="输入您的密码"
-                  size="lg"
-                />
-              </FormControl>
               <Button type="submit" colorScheme="blue" size="lg" width="full">
-                登录
+                发送重置链接
               </Button>
               <Text fontSize={{ base: "sm", md: "md" }}>
-                忘记密码？{" "}
-                <Link
+                记起密码了？{" "}
+                <Text
+                  as="span"
                   color="blue.500"
-                  onClick={() => navigate("/reset-password")}
+                  cursor="pointer"
+                  onClick={() => navigate("/sign-in")}
                 >
-                  重置密码
-                </Link>
-              </Text>
-              <Text fontSize={{ base: "sm", md: "md" }}>
-                还没有账号？{" "}
-                <Link color="blue.500" onClick={() => navigate("/sign-up")}>
-                  注册
-                </Link>
+                  返回登录
+                </Text>
               </Text>
             </VStack>
           </Box>
@@ -118,4 +102,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default ResetPasswordPage;

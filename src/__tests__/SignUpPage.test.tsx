@@ -37,4 +37,15 @@ describe("SignUpPage", () => {
 
     expect(screen.getByText(/信息收集/i)).toBeInTheDocument();
   });
+
+  it("navigates to reset password page when reset password link is clicked", async () => {
+    renderPage("/sign-in");
+
+    const resetPasswordLink = screen.getByText("重置密码");
+    expect(resetPasswordLink).toBeTruthy();
+
+    await userEvent.click(resetPasswordLink);
+
+    expect(screen.getByText(/重置您的密码/i)).toBeInTheDocument();
+  });
 });
